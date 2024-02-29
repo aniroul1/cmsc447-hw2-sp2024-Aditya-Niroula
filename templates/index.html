@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scores</title>
+</head>
+<body>
+    <h1>Scores List</h1>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="number" name="points" placeholder="Points" required>
+        <button type="submit">Add Score</button>
+    </form>
+    <ul>
+        {% for score in scores %}
+        {{ score['name'] }}: {{ score['points'] }}
+        <li>
+            
+            <!-- Update form -->
+            <form action="/update/{{ score['id'] }}" method="post" style="display: inline;">
+                <input type="text" name="name" placeholder="New Name" required>
+                <input type="number" name="points" placeholder="New Points" required>
+                <button type="submit">Update</button>
+            </form>
+            <!-- Delete form, -->
+            <form action="/delete/{{ score['id'] }}" method="post" style="display: inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
