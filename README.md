@@ -3,8 +3,9 @@
 
 I created a website using flask and basic HTML that performs CRUD operations.
 
-Follwing is the way to run the applicatio:
--Run the table.py usinng the command python table.py that will create a required table in database.db
+Follwing is the way to run the application:
+-Install all the required libraries such as python, flask and sqlite.
+-First of all, Run the table.py usinng the command python table.py that will create a required table in database.db
 -Then run the main application app.py using python app.py that runs under the url: http://127.0.0.1:5000/
 
 How to use the application:
